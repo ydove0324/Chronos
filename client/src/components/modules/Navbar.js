@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "@reach/router";
-import GoogleLogin, { GoogleLogout } from "react-google-login";
+import { Routes, Route, Link } from "react-router-dom";
+import { GoogleOAuthProvider, GoogleLogin, googleLogout } from "@react-oauth/google";
 
 import "./NavBar.css";
 
@@ -36,17 +36,17 @@ const NavBar = (props) => {
           TimeManage
         </Link>
         <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>
-          {userId ? (
+          {props.userId ? (
             <button
               onClick={() => {
                 googleLogout();
-                handleLogout();
+                props.handleLogout();
               }}
             >
               Logout
             </button>
           ) : (
-            <GoogleLogin onSuccess={handleLogin} onError={(err) => console.log(err)} />
+            <GoogleLogin onSuccess={props.handleLogin} onError={(err) => console.log(err)} />
           )}
         </GoogleOAuthProvider>
       </div>

@@ -11,6 +11,7 @@ import "../utilities.css";
 import { socket } from "../client-socket.js";
 
 import { get, post } from "../utilities";
+import NavBar from "./modules/Navbar.js";
 
 /**
  * Define the "App" component
@@ -43,20 +44,32 @@ const App = () => {
   };
 
   return (
-    <Routes>
-      <Route
-        path="/"
-        element={
-          <Skeleton
-            path="/"
-            handleLogin={handleLogin}
-            handleLogout={handleLogout}
-            userId={userId}
-          />
-        }
-      />
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+    // <Routes>
+    //   <Route
+    //     path="/"
+    //     element={
+    //       <Skeleton
+    //         path="/"
+    //         handleLogin={handleLogin}
+    //         handleLogout={handleLogout}
+    //         userId={userId}
+    //       />
+    //     }
+    //   />
+    //   <Route path="*" element={<NotFound />} />
+    // </Routes>
+    <div>
+      <NavBar handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
+      <main>
+        <switch>
+          <Routes>
+            <Route path="/" element={<Skeleton />} />
+            {/* <Route path="/timemanage" element={<Workbook />} /> */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </switch>
+      </main>
+    </div>
   );
 };
 
