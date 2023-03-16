@@ -35,23 +35,20 @@ const NavBar = (props) => {
         <Link to="/timemanage" className="NavBar-link">
           TimeManage
         </Link>
-        {props.userId ? (
-          <GoogleLogout
-            clientId={GOOGLE_CLIENT_ID}
-            buttonText="Logout"
-            onLogoutSuccess={props.handleLogout}
-            onFailure={(err) => console.log(err)}
-            className="NavBar-link NavBar-login"
-          />
-        ) : (
-          <GoogleLogin
-            clientId={GOOGLE_CLIENT_ID}
-            buttonText="Login"
-            onSuccess={props.handleLogin}
-            onFailure={(err) => console.log(err)}
-            className="NavBar-link NavBar-login"
-          />
-        )}
+        <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>
+          {userId ? (
+            <button
+              onClick={() => {
+                googleLogout();
+                handleLogout();
+              }}
+            >
+              Logout
+            </button>
+          ) : (
+            <GoogleLogin onSuccess={handleLogin} onError={(err) => console.log(err)} />
+          )}
+        </GoogleOAuthProvider>
       </div>
     </nav>
   );
