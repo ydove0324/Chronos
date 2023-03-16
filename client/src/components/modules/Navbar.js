@@ -21,9 +21,9 @@ const GOOGLE_CLIENT_ID =
 const NavBar = (props) => {
   // console.log(props);
   return (
-    <nav className="NavBar-container">
+    <nav className="NavBar-container ">
       <div className="NavBar-title u-inlineBlock">Chronos</div>
-      <div className="NavBar-linkContainer u-inlineBlock">
+      <div className="NavBar-linkContainer u-inlineBlock u-flexColumn">
         <Link to="/" className="NavBar-link">
           Home
         </Link>
@@ -46,7 +46,13 @@ const NavBar = (props) => {
               Logout
             </button>
           ) : (
-            <GoogleLogin onSuccess={props.handleLogin} onError={(err) => console.log(err)} />
+            <GoogleLogin
+              clientId={GOOGLE_CLIENT_ID}
+              buttonText="login"
+              onSuccess={props.handleLogin}
+              onError={(err) => console.log(err)}
+              className="Navbar-link NavBar-login"
+            />
           )}
         </GoogleOAuthProvider>
       </div>

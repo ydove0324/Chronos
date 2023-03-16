@@ -1,6 +1,10 @@
 .NavBar-container {
   padding: var(--s) var(--m);
   background-color: var(--primary);
+  display: flex;
+  /* align-self: flex-end; */
+  /* align-content: center; */
+  /* align-items: center; */
 }
 
 .NavBar-title {
@@ -27,11 +31,20 @@
 .NavBar-link:hover {
   opacity: 0.8;
 }
-
+.NavBar-login {
+  position: absolute;
+  float: right;
+}
 .NavBar-link.NavBar-login {
   opacity: 1;
 }
 
 .NavBar-link + .NavBar-link {
   margin-left: var(--m);
+}
+
+.u-flexColumn {
+  display: flex;
+  flex-direction: column-reverse;
+  align-content: space-between;
 }
