@@ -14,6 +14,7 @@ const User = require("./models/user");
 
 // import authentication library
 const auth = require("./auth");
+const Plan = require("./models/plan.js");
 
 // api endpoints: all these paths will be prefixed with "/api/"
 const router = express.Router();
@@ -42,6 +43,23 @@ router.post("/initsocket", (req, res) => {
 // |------------------------------|
 // | write your API methods below!|
 // |------------------------------|
+router.post("/plan", (req, res) => {
+  const check_data_valid = (start_time, end_time) => {
+    return true; /*待添加*/
+  };
+  if (!check_data_valid(req.body.start_time, req.body.end_time)) {
+    res.send("The Time is invalid,Please Try again");
+  } else {
+    const Newplan = new Plan({
+      creator_id: req.user._id,
+      creator_name: req.user.name,
+      start_time: req.body.start_time,
+      end_time: req.body.end_time,
+      plan_content: req.body.content,
+    });
+    Newplan.save().then((Newplan) => res.send(Newplan));
+  }
+});
 
 // anything else falls to this "not found" case
 router.all("*", (req, res) => {
