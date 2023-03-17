@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { post } from "../../utilities";
 /**
  * New Post is a parent component for all input components
@@ -43,4 +44,22 @@ const NewPostInput = (props) => {
     </div>
   );
 };
-const Newplan = (props) => {};
+/**
+ *
+ * @param {*} props:{empty}
+ * @returns
+ */
+const Newplan = (props) => {
+  const addNewplan = (content) => {
+    const body = {
+      //   start_time: start_time,
+      //   end_time: end_time,
+      content: content,
+    };
+    post("/api/plan", body).then((plan) => {
+      console.log(plan);
+    });
+  };
+  return <NewPostInput defaultText="Enter your plan" onSubmit={addNewplan} />;
+};
+export default Newplan;
