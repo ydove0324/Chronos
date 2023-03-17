@@ -20,6 +20,10 @@
 .NavBar-linkContainer {
   margin-left: var(--l);
 }
+.NavBar-logout {
+  margin-right: auto;
+  display: flex;
+}
 
 .NavBar-link,
 .NavBar-link:visited {

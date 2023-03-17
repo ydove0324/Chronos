@@ -23,7 +23,7 @@ const NavBar = (props) => {
   return (
     <nav className="NavBar-container ">
       <div className="NavBar-title u-inlineBlock">Chronos</div>
-      <div className="NavBar-linkContainer u-inlineBlock u-flexColumn">
+      <div className="NavBar-linkContainer u-inlineBlock">
         <Link to="/" className="NavBar-link">
           Home
         </Link>
@@ -42,6 +42,7 @@ const NavBar = (props) => {
                 googleLogout();
                 props.handleLogout();
               }}
+              className="NavBar-linkContainer NavBar-logout"
             >
               Logout
             </button>
