@@ -35,3 +35,11 @@
   bottom: 0;
   width: 100%;
 }
+.Sentence_container {
+  border: 2px solid #ccc; /* 添加边框 */
+  border-radius: 5px; /* 添加圆角 */
+  padding: 20px; /* 添加内边距 */
+  margin: 20px auto; /* 水平居中 */
+  max-width: 500px; /* 设置最大宽度 */
+  text-align: center; /* 水平居中文本 */
+}

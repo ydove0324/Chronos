@@ -57,9 +57,6 @@ router.post("/plan", (req, res) => {
       end_time: req.body.end_time,
       plan_content: req.body.content,
     });
-    console.log(req.body.start_time);
-    console.log(req.body.end_time);
-    console.log(req.body.content);
     Newplan.save().then((Newplan) => res.send(Newplan));
   }
 });
