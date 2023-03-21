@@ -29,3 +29,9 @@
   color: var(--white);
   background-color: var(--primary);
 }
+
+.bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

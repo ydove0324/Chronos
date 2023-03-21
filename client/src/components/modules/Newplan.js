@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { post } from "../../utilities";
+import "./Newpostinput.css";
 /**
  * New Post is a parent component for all input components
  *
@@ -25,7 +26,7 @@ const NewPostInput = (props) => {
   };
 
   return (
-    <div className="u-flex">
+    <div className="u-flex bottom">
       <input
         type="text"
         placeholder={props.defaultText}
