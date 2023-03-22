@@ -43,6 +43,11 @@ router.post("/initsocket", (req, res) => {
 // |------------------------------|
 // | write your API methods below!|
 // |------------------------------|
+router.get("/plan", (req, res) => {
+  Plan.find({ creator_id: req.user._id }).then((planlist) => {
+    res.send(planlist);
+  });
+});
 router.post("/plan", (req, res) => {
   const check_data_valid = (start_time, end_time) => {
     return true; /*待添加*/
