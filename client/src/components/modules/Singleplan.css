@@ -1,0 +1,32 @@
+.timeline-item {
+  background-color: #f2f2f2;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.timeline-dates {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.start-date,
+.end-date {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+.timeline-content {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.username {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
