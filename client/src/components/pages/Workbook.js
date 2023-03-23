@@ -23,13 +23,14 @@ const Workbook = (props) => {
   };
   useEffect(() => {
     load_history();
-    // const callback = (data) => {
-    //   setplanlist(planlist);
-    // };
-    // socket.on("plan", callback);
-    // return () => {
-    //   socket.off("plan", callback);
-    // };
+    const callback = (data) => {
+      setplanlist((prevplanlist) => [...prevplanlist, data]);
+      // setplanlist(planlist.concat(data));
+    };
+    socket.on("plan", callback);
+    return () => {
+      socket.off("plan", callback);
+    };
   }, []);
   let Planlist;
   if (planlist.length === 0) {

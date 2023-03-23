@@ -10,13 +10,13 @@ import React from "react";
 import "./Singleplan.css";
 const Singleplan = (props) => {
   return (
-    <div class="timeline-item">
-      <div class="timeline-dates">
-        <span class="start-date">{`from ${props.start_time} to ${props.end_time}`}</span>
+    <div className="timeline-item">
+      <div className="timeline-dates">
+        <span className="start-date">{`from ${props.start_time} to ${props.end_time}`}</span>
         {/* <span class="end-date">{props.end_time}</span> */}
       </div>
-      <div class="timeline-content">
-        <h3 class="username">{props.creator_name}</h3>
+      <div className="timeline-content">
+        <h3 className="username">{props.creator_name}</h3>
         <p>{props.plan_content}</p>
       </div>
     </div>

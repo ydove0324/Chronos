@@ -70,7 +70,7 @@ router.post("/plan", (req, res) => {
       plan_content: req.body.content,
     });
     Newplan.save().then((Newplan) => res.send(Newplan));
-    // socketManager.getSocketFromUserID(req.user._id).emit("plan", Newplan);
+    socketManager.getSocketFromUserID(req.user._id).emit("plan", Newplan);
   }
 });
 
