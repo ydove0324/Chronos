@@ -35,6 +35,7 @@ const App = () => {
     console.log(`Logged in as ${decodedCredential.name}`);
     post("/api/login", { token: userToken }).then((user) => {
       setUserId(user._id);
+      console.log(socket.id);
       post("/api/initsocket", { socketid: socket.id });
     });
   };
@@ -45,20 +46,6 @@ const App = () => {
   };
 
   return (
-    // <Routes>
-    //   <Route
-    //     path="/"
-    //     element={
-    //       <Skeleton
-    //         path="/"
-    //         handleLogin={handleLogin}
-    //         handleLogout={handleLogout}
-    //         userId={userId}
-    //       />
-    //     }
-    //   />
-    //   <Route path="*" element={<NotFound />} />
-    // </Routes>
     <div>
       <NavBar handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
       <main>

@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useCallback } from "react";
 import Newplan from "../modules/Newplan";
 import { useState, useEffect } from "react";
 import { get } from "../../utilities.js";
 import Singleplan from "../modules/Singleplan";
+import { socket } from "../../client-socket";
+// import { call } from "file-loader";
 /**
  *
  * @param {*} props
@@ -21,6 +23,13 @@ const Workbook = (props) => {
   };
   useEffect(() => {
     load_history();
+    // const callback = (data) => {
+    //   setplanlist(planlist);
+    // };
+    // socket.on("plan", callback);
+    // return () => {
+    //   socket.off("plan", callback);
+    // };
   }, []);
   let Planlist;
   if (planlist.length === 0) {
@@ -35,7 +44,7 @@ const Workbook = (props) => {
       />
     ));
   }
-  console.log(Planlist);
+  // console.log(Planlist);
   return (
     <>
       {Planlist}

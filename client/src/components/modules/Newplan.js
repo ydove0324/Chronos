@@ -7,7 +7,6 @@ import "./Newpostinput.css";
  *
  * Proptypes
  * @param {string} defaultText is the placeholder text
- * @param {string} storyId optional prop, used for comments
  * @param {({storyId, value}) => void} onSubmit: (function) triggered when this post is submitted, takes {storyId, value} as parameters
  */
 const NewPostInput = (props) => {
