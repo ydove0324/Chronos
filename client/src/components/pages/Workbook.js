@@ -42,6 +42,7 @@ const Workbook = (props) => {
         start_time={singleplan.start_time}
         end_time={singleplan.end_time}
         plan_content={singleplan.plan_content}
+        _id={singleplan._id}
       />
     ));
   }

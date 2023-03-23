@@ -61,3 +61,17 @@ export function post(endpoint, params = {}) {
       throw `POST request to ${endpoint} failed with error:\n${error}`;
     });
 }
+export async function DELETE(endpoint, params = {}) {
+  /*Delete method */
+  return fetch("/api/delete-data", {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ dataId: 1 }),
+  })
+    .then(convertToJSON)
+    .catch((error) => {
+      throw `DELETE request to ${endpoint} failed with error:\n${error}`;
+    });
+}
