@@ -6,7 +6,8 @@ import React from "react";
  * start_time:
  * end_time:
  * plan_content
- * _id
+ * data_id
+ * handle_delete
  */
 import "./Singleplan.css";
 const Singleplan = (props) => {
@@ -14,7 +15,16 @@ const Singleplan = (props) => {
     <div className="timeline-item">
       <div className="timeline-dates">
         <span className="start-date">{`from ${props.start_time} to ${props.end_time}`}</span>
-        <span class="end-date">{` the id of this data is ${props._id}`}</span>
+        {/* <span class="end-date">{` the id of this data is ${props._id}`}</span> */}
+        <button
+          className="end_date"
+          onClick={() => {
+            console.log(props.data_id);
+            props.handle_delete(props.data_id);
+          }}
+        >
+          Delete this plan
+        </button>
       </div>
       <div className="timeline-content">
         <h3 className="username">{props.creator_name}</h3>

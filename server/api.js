@@ -50,6 +50,15 @@ router.post("/initsocket", (req, res) => {
 // |------------------------------|
 // | write your API methods below!|
 // |------------------------------|
+router.delete("/plan_delete", (req, res) => {
+  Plan.deleteOne({ _id: req.body.data_id })
+    .then(() => {
+      console.log(`delete successfully with the id of ${req.body.data_id}`);
+    })
+    .catch((error) => {
+      console.log(`error ${error}`);
+    });
+});
 router.get("/plan", (req, res) => {
   Plan.find({ creator_id: req.user._id }).then((planlist) => {
     res.send(planlist);

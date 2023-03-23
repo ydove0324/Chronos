@@ -63,12 +63,12 @@ export function post(endpoint, params = {}) {
 }
 export async function DELETE(endpoint, params = {}) {
   /*Delete method */
-  return fetch("/api/delete-data", {
+  return fetch(endpoint, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ dataId: 1 }),
+    body: JSON.stringify(params),
   })
     .then(convertToJSON)
     .catch((error) => {
