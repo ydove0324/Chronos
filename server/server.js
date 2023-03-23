@@ -37,7 +37,7 @@ const socketManager = require("./server-socket");
 // Server configuration below
 // TODO change connection URL after setting up your team database
 const mongoConnectionURL =
-  "mongodb+srv://y_dove:hu%40ngxu0324@cluster0.crxdema.mongodb.net/?retryWrites=true&w=majority";
+  "mongodb+srv://y_dove:iifE5rZ5iATBVT2@cluster0.crxdema.mongodb.net/?retryWrites=true&w=majority";
 // TODO change database name to the name you chose
 const databaseName = "Cluster0";
 
