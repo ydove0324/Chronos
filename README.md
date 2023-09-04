@@ -37,7 +37,7 @@ mit 的学习资料: "https://weblab.mit.edu/schedule/"
 
 ---
 
-可以开始动手之后可以来找我要一个 ssr 的密钥
+可以开始动手之后找我上传一个 ssh 的密钥
 
 然后每次把更新 git push 上去
 
